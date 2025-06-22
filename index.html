@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple HTML Page</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script type="module" src="https://unpkg.com/@splinetool/viewer@1.10.13/build/spline-viewer.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="navbar">
+            <div class="logo">mlsc</div>
+            <div class="dummy-info" id="date-time"></div>
+            <script>
+                function updateDateTime() {
+                    const now = new Date();
+                    const options = { 
+                        year: 'numeric', 
+                        month: 'short', 
+                        day: 'numeric', 
+                        hour: '2-digit', 
+                        minute: '2-digit', 
+                        second: '2-digit',
+                        hour12: false
+                    };
+                    document.getElementById('date-time').textContent = now.toLocaleString(undefined, options);
+                }
+                setInterval(updateDateTime, 1000);
+                updateDateTime();
+            </script>
+            <div class="link">contact</div>
+        </div>
+        <div class="hero-section">
+            <div class="copy">
+                <div class="row row-1">
+                    <div class="h1">mlsc.tech</div>
+                    <div class="p">Since 2020 &copy;</div>
+                </div>
+                <div class="row row-2">
+                    <div></div>
+                    <div class="h1">We are built</div>
+                    <div></div>
+                </div>
+                <div class="row row-3">
+                    <div></div>
+                    <div class="h1">different</div>
+                    <div class="span">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;We are a team of developers, designers, and thinkers who are passionate about creating innovative solutions for the web.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="spline">
+            <script type="module" src="https://unpkg.com/@splinetool/viewer@1.10.13/build/spline-viewer.js"></script>
+            <spline-viewer url="https://prod.spline.design/QdZDQX5uWrRsAxrh/scene.splinecode"></spline-viewer>
+        </div>
+        <div class="pre-loader">
+            <div class="content">
+                <div class="text">Everyone uses a <span>pre-loader</span> sorry :(</div>
+                <div class="loader"></div>
+            </div>
+        </div>
+        <script>
+            gsap.from(".text", 0.8, {
+                y: 40,
+                opacity: 0,
+                ease: "power2.inOut",
+                delay: 1,
+            });
+
+            gsap.from(".loader", 2, {
+                width: 0,
+                ease: "power4.inOut",
+                delay: 1,
+            });
+
+            gsap.to(".pre-loader", 2, {
+                top: "-100%",
+                ease: "power4.inOut",
+                delay: 3,
+            });
+
+            gsap.from(".row", 0.9, {
+                y:50,
+                opacity: 0,
+                ease: "power4.inOut",
+                delay: 3.5,
+                stagger: {
+                    amount: 0.3,
+                },
+            });
+        </script>
+</body>
+</html>
+
+
