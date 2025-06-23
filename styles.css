@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dongle&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 
 * {
     box-sizing: border-box;
@@ -32,6 +34,7 @@ html, body {
     justify-content: space-between;
     font-family: "Neue Montreal", sans-serif;
     font-weight: 300;
+    font-size: large;
     text-transform: uppercase;
     padding: 0 2em;
 }
@@ -40,11 +43,15 @@ html, body {
     padding: 0.4em 0.8em;
 }
 
-.link {
-    border: 2px solid red;
-    border-radius: 6px;
+.hamburger {
     padding: 0.4em 0.8em;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+
+
 
 @media (max-width: 900px) {
     .dummy-info {
@@ -57,6 +64,65 @@ html, body {
     top: 10vh;
     width: 40%;
     height: 90vh;
+    z-index: 0;
+}
+
+.hero-section {
+  width: 100%;
+  height: 90vh;
+  border-radius: 1em 1em 0 0;
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;;
+  overflow: hidden;
+  background: #AFDBF5;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.card {
+  width: 100%;
+  height: 90vh;
+  box-shadow: 0 7px 30px -10px rgba(150, 170, 180, 0.5);
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.card > .blob {
+  position: absolute;
+  background: #85def2;
+  height: 25%;
+  width: 12.5%;
+  filter: blur(15px);
+  opacity: 0.6;
+  border-radius: 100%;
+  z-index: 0;
+}
+
+.copy {
+  position: absolute;
+  z-index: 0;
+  text-align: center;
+  padding: 2em;
+  color: inherit;
+  padding-left: 15em; 
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
 }
 
 
@@ -65,34 +131,36 @@ html, body {
     .spline {
         display: none;
     }
+    .hero-section {
+        padding-left: 0em;
+    }
+    .copy {
+        padding-left: 0em;
+    }
 }
 
-.hero-section {
-    width: 100%;
-    height: 90vh;
-    background: linear-gradient( 177.6deg,  rgba(20,0,113,1) 15.3%, rgba(1,0,62,1) 91.3% );
-    border-radius: 1em 1em 0 0;
-    padding: 2em;
-    display: flex;
-    position: relative;
-    justify-content: center ;
-    align-items: center;
-}
 
 .row {
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: linear-gradient(to right, #ffffff, #9999ff);
+    background: #000;
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
 .h1 {
-    font-size: 12vw;
+    font-size: 11vw;
     letter-spacing: -4px;
+}
+
+.p {
+    margin-top: 1em;
+    font-size: 15vw;
 }
 
 
@@ -128,11 +196,13 @@ html, body {
 }
 
 .span {
-    width: 300px;
-    font-size: 16px;
+    width: 450px;
+    font-size: 20px;
     padding: 0 2em;
     padding-top: 2em;
-    font-family: monospace;
+    font-family: "Dongle", sans-serif;
+    font-size: 30px;
+    font-style: normal;
 
 }
 
@@ -147,6 +217,11 @@ html, body {
 
     .h1 {
         font-size: 15vw;
+        padding-left: 20px;
+    }
+    .span {
+        width: 80vw;
+        font-size: 20px;
     }
 }
 
@@ -183,7 +258,7 @@ html, body {
 .loader {
     width: 450px;
     height: 2px;
-    background: red;
+    background: skyblue;
 }
 
 @media (max-width: 900px) {

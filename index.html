@@ -3,10 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simple HTML Page</title>
+    <title>MLSC homepage</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="index.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
     <script type="module" src="https://unpkg.com/@splinetool/viewer@1.10.13/build/spline-viewer.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
 </head>
 <body>
     <div class="container">
@@ -30,9 +32,14 @@
                 setInterval(updateDateTime, 1000);
                 updateDateTime();
             </script>
-            <div class="link">contact</div>
+            <div class="hamburger" id="hamburger">
+                Menu
+            </div>
         </div>
         <div class="hero-section">
+            <div class="card">
+                <div class="blob"></div>
+            </div>
             <div class="copy">
                 <div class="row row-1">
                     <div class="h1">mlsc.tech</div>
@@ -47,18 +54,21 @@
                     <div></div>
                     <div class="h1">different</div>
                     <div class="span">
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;We are a team of developers, designers, and thinkers who are passionate about creating innovative solutions for the web.
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lorem ipsum dolor sit amet consectetur adipisicing elit.
                     </div>
                 </div>
             </div>
+            
+            
         </div>
+        
         <div class="spline">
             <script type="module" src="https://unpkg.com/@splinetool/viewer@1.10.13/build/spline-viewer.js"></script>
             <spline-viewer url="https://prod.spline.design/QdZDQX5uWrRsAxrh/scene.splinecode"></spline-viewer>
         </div>
         <div class="pre-loader">
             <div class="content">
-                <div class="text">Everyone uses a <span>pre-loader</span> sorry :(</div>
+                <div class="text">यह एक <span>pre-loader</span> है </div>
                 <div class="loader"></div>
             </div>
         </div>
@@ -67,26 +77,26 @@
                 y: 40,
                 opacity: 0,
                 ease: "power2.inOut",
-                delay: 1,
+                delay: 0.5,
             });
 
             gsap.from(".loader", 2, {
                 width: 0,
                 ease: "power4.inOut",
-                delay: 1,
+                delay: 0.5,
             });
 
             gsap.to(".pre-loader", 2, {
                 top: "-100%",
                 ease: "power4.inOut",
-                delay: 3,
+                delay: 2,
             });
 
             gsap.from(".row", 0.9, {
                 y:50,
                 opacity: 0,
                 ease: "power4.inOut",
-                delay: 3.5,
+                delay: 2.5,
                 stagger: {
                     amount: 0.3,
                 },
